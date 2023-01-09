@@ -239,9 +239,6 @@
 
     </div>
 
-    <!-- <a href="#" onclick="getBotResponse('harga #1'); return false;">Harga #1</a>  -->
-    <a href="javascript:getBotResponse( '<%#Eval("harga #1")%>' )" >Harga #1</a>
-
     <!---Swiper js link--->
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
@@ -345,9 +342,9 @@
             document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
             //Uncomment this if you want the bot to respond to this buttonSendText event
-            setTimeout(() => {
-                getHardResponse(sampleText);
-            }, 1000)
+            // setTimeout(() => {
+            //     getHardResponse(sampleText);
+            // }, 1000)
         }
 
         function sendButton() {

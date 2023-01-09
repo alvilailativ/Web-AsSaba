@@ -11,6 +11,10 @@ class Admin extends CI_Controller {
         $this->load->model('M_produk');
         $this->load->model('M_galeri');
         $this->load->model('M_chatbot');
+
+        if($this->session->userdata('username') == NULL) {
+        	redirect('login');
+        }
 	}
     
     public function index()

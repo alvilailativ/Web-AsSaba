@@ -12,7 +12,6 @@ class Produk extends CI_Controller {
 	
 	public function insert()
 	{
-		
 		$config['upload_path']      = './assets/produk/';
         $config['allowed_types']    = 'jpg|png|jpeg';
 		$this->upload->initialize($config);
@@ -31,7 +30,7 @@ class Produk extends CI_Controller {
 	public function update($id)
 	{
 		
-		$config['upload_path']      = './assets/produk/';
+		$config['upload_path']      = './assets/img/';
         $config['allowed_types']    = 'jpg|png|jpeg';
 		$this->upload->initialize($config);
 		$this->upload->do_upload('img');
@@ -40,6 +39,9 @@ class Produk extends CI_Controller {
 		$produk['nama'] = $this->input->post('nama');
 		$produk['link'] = $this->input->post('link');
 		$produk['id_user'] = $this->input->post('id_user');
+
+		// echo "<pre>" . var_export($produk, TRUE) . "</pre>";
+		// echo "<pre>" . var_export($image, TRUE) . "</pre>";
  
 		$query = $this->M_produk->updateproduk($produk, $id, $image);
 		echo "<script> javascript:alert('data berhasil diupdate'); </script>";

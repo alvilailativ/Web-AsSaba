@@ -14,7 +14,7 @@ class Galeri extends CI_Controller {
 	{
 		$galeri['id_galeri'] = $this->input->post('id_galeri');
 		
-		$config['upload_path']      = './assets/galeri/';
+		$config['upload_path']      = './assets/img/testi';
         $config['allowed_types']    = 'jpg|png|jpeg';
 		$this->upload->initialize($config);
 		$this->upload->do_upload('img');
@@ -32,14 +32,12 @@ class Galeri extends CI_Controller {
 	public function update($id)
 	{
 		
-		$config['upload_path']      = './assets/galeri/';
+		$config['upload_path']      = './assets/img/testi';
         $config['allowed_types']    = 'jpg|png|jpeg';
 		$this->upload->initialize($config);
 		$this->upload->do_upload('img');
 		$image = $this->upload->data(); //menyimpan data image ke variable $image
 		
-		$galeri['deskripsi'] = $this->input->post('deskripsi');
-		$galeri['title'] = $this->input->post('title');
 		$galeri['id_user'] = $this->input->post('id_user');
  
 		$query = $this->M_galeri->updategaleri($galeri, $id, $image);

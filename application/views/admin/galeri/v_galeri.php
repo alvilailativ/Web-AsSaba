@@ -22,16 +22,16 @@
                     Add New
                 </button>
 
-                <a href="<?php echo base_url('admin/index'); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Back</a><br><br>
+                <a href="<?php echo base_url('admin'); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Back</a><br><br>
                 </div>
-                <table class="table align-items-center mb-0">
+                <table class="table">
                 <thead align="center">
                   <tr>
                     <th>No</th>
+                    <th>Action</th>
                     <th>Nama Galeri</th>
                     <th>Galeri</th>
                     <th>Id User</th>
-                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody align="center">
@@ -40,12 +40,12 @@
                     ?>
                     <tr>
                       <td><?= $no++;?></td>
-                      <td><?= $item['foto_galeri'];?></td>
-                      <td><img height="300" width="300" class="mb-2" src="<?= base_url() ?>/assets/img/testi/<?= $item['foto_galeri'];?>"></td>
-                      <td><?= $item['id_user']; ?></td>
                       <td>
                         <a href="#" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#editmodal<?php echo $item['id_galeri']; ?>">Edit</a>
                         <a href="<?= base_url('delete_galeri/') . $item['id_galeri']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+                        <td><?= $item['foto_galeri'];?></td>
+                        <td><img height="300" width="300" class="mb-2" src="<?= base_url() ?>/assets/img/testi/<?= $item['foto_galeri'];?>"></td>
+                        <td><?= $item['id_user']; ?></td>
                     </tr>
                     <?php
                   }
@@ -73,14 +73,6 @@
             <div class="form-group">
               <label>Foto</label>
               <input type="file" name="img" class="form-control" size="50">
-            </div>
-            <div class="form-group">
-              <label>Deskripsi</label>
-              <input type="text" name="deskripsi" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Title</label>
-              <input type="text" name="title" class="form-control">
             </div>
             <div class="form-group">
               <label>ID User</label>
@@ -114,14 +106,6 @@ foreach ($galeri as $item) : $no++; ?>
                     <div class="form-group">
                         <label>foto</label>
                         <input type="file" name="img" class="form-control" size="50">
-                    </div>
-                    <div class="form-group">
-                        <label>Deskripsi</label>
-                        <input type="text" name="deskripsi" class="form-control" value="<?php echo $item['deskripsi']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" name="title" class="form-control" value="<?php echo $item['title']; ?>">
                     </div>
                     <div class="form-group">
                         <label>ID User</label>

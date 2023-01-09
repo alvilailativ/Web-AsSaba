@@ -53,10 +53,16 @@ $route['default_controller']    = 'Dashboard';
 $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
 
+// ==================== CHATBOT RESPONSE ====================
 $route['response']              = 'Dashboard/response';
 
+// ==================== AUTH ====================
 $route['admin']                 = 'Admin';
+$route['login']                 = 'Auth';
+$route['login_proc']            = 'Auth/login';
+$route['logout']                = 'Auth/logout';
 
+// ==================== USER ====================
 $route['user']                  = 'Admin/userPage';
 $route['v_add_user']            = 'Admin/addUser';
 $route['v_edit_user/(:any)']    = 'Admin/editUser/$1';
@@ -64,6 +70,7 @@ $route['insert_user']           = 'User/insert';
 $route['update_user/(:any)']    = 'User/update/$1';
 $route['delete_user/(:any)']    = 'User/delete/$1';
 
+// ==================== PRODUK ====================
 $route['produk']                = 'Admin/produkPage';
 $route['v_add_produk']          = 'Admin/addProduk';
 $route['v_edit_produk/(:any)']  = 'Admin/editProduk/$1';
@@ -71,6 +78,7 @@ $route['insert_produk']         = 'Produk/insert';
 $route['update_produk/(:any)']  = 'Produk/update/$1';
 $route['delete_produk/(:any)']  = 'Produk/delete/$1';
 
+// ==================== GALERI ====================
 $route['galeri']                = 'Admin/galeriPage';
 $route['v_add_galeri']          = 'Admin/addGaleri';
 $route['v_edit_galeri/(:any)']  = 'Admin/editGaleri/$1';
@@ -78,6 +86,7 @@ $route['insert_galeri']         = 'Galeri/insert';
 $route['update_galeri/(:any)']  = 'Galeri/update/$1';
 $route['delete_galeri/(:any)']  = 'Galeri/delete/$1';
 
+// ==================== CHATBOT ====================
 $route['chatbots']              = 'Admin/chatbotPage';
 $route['v_add_chatbot']         = 'Admin/addChatbot';
 $route['v_edit_chatbot/(:any)'] = 'Admin/editChatbot/$1';

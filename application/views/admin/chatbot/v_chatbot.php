@@ -22,16 +22,16 @@
               Add New
             </button>
             
-            <a href="<?php echo base_url('admin/index'); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Back</a><br><br>
+            <a href="<?php echo base_url('admin'); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Back</a><br><br>
         </div>
           <table class="table align-items-center mb-0">
           <thead align="center">
             <tr>
               <th>No</th>
+              <th>Action</th>
               <th>Pertanyaan</th>
               <th>Response</th>
               <th>ID User</th>
-              <th>Action</th>
             </tr>
           </thead>
           <tbody align="left">
@@ -40,12 +40,12 @@
               ?>
               <tr>
                 <td><?= $no++;?></td>
-                <td><?= $item['pertanyaan'];?></td>
-                <td><?= $item['response']; ?></td>
-                <td><?= $item['id_user']; ?></td>
                 <td>
                   <a href="#" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#editmodal<?php echo $item['id_chatbot']; ?>">Edit</a>
                   <a href="<?= base_url('delete_chatbot/') . $item['id_chatbot']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+                  <td><?= $item['pertanyaan'];?></td>
+                  <td><?= $item['response']; ?></td>
+                  <td><?= $item['id_user']; ?></td>
               </tr>
               <?php
             }
@@ -73,11 +73,11 @@
         <div class="modal-body">
             <div class="form-group">
               <label>Pertanyaan</label>
-              <textarea type="text" name="pertanyaan" class="form-control"></textarea>
+              <input type="text" name="pertanyaan" class="form-control">
             </div>
             <div class="form-group">
               <label>Response</label>
-              <textarea type="text" name="response" class="form-control"></textarea>
+              <input type="text" name="response" class="form-control">
             </div>
             <div class="form-group">
               <label>ID User</label>
@@ -110,18 +110,18 @@ foreach ($chatbot as $item) : $no++; ?>
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Pertanyaan</label>
-                        <textarea name="pertanyaan" class="form-control"><?php echo $item['pertanyaan']; ?></textarea>
+                        <input type="text" name="pertanyaan" class="form-control" value="<?php echo $item['pertanyaan']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Response</label>
-                        <textarea name="response" class="form-control"><?php echo $item['response']; ?></textarea>
+                        <input type="text" name="response" class="form-control" value="<?php echo $item['response']; ?>">
                     </div>
                     <div class="form-group">
                         <label>ID User</label>
                         <input type="number" name="id_user" class="form-control" value="<?php echo $item['id_user']; ?>">
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class=" modal-footer">
                   <button type="submit" class="btn btn-primary">Save</button>
               </form>
                   <a class="btn btn-secondary" data-bs-dismiss="modal">Close</a>

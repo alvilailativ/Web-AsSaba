@@ -21,15 +21,16 @@
             <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Add New
             </button>
+            <a href="<?php echo base_url('admin'); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Back</a><br><br>
             
             </div>
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr align="center">
                       <th>No</th>
+                      <th>Action</th>
                       <th>Username</th>
                       <th>Password</th>
-                      <th>Action</th>
                     </tr>
                   </thead>
                     <tbody align="center">
@@ -38,11 +39,11 @@
                       ?>
                       <tr>
                         <td><?= $no++;?></td>
-                        <td><?= $item['username'];?></td>
-                        <td><?= $item['password']; ?></td>
                         <td>
-                        <a href="#" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#editmodal<?php echo $item['id_user']; ?>">Edit</a>
+                          <a href="#" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#editmodal<?php echo $item['id_user']; ?>">Edit</a>
                           <a href="<?= base_url('delete_user/') . $item['id_user']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+                          <td><?= $item['username'];?></td>
+                          <td><?= $item['password']; ?></td>
                       </tr>
                       <?php
                     }
@@ -69,11 +70,11 @@
         <div class="modal-body">
             <div class="form-group">
               <label>Username</label>
-              <input type="text" name="username" class="form-control" required>
+              <input type="text" name="username" class="form-control">
             </div>
             <div class="form-group">
               <label>Password</label>
-              <input type="password" name="password" class="form-control" required>
+              <input type="password" name="password" class="form-control">
             </div>
         </div>
         <div class="modal-footer">
